@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+body {
+	font-family: sans-serif;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}

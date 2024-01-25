@@ -1,0 +1,117 @@
+.main {
+    position: relative;
+    font-family: monospace;
+    margin-top: 122px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 40px;
+        width: 70%;
+        max-width: 974px;
+        height: 15px;
+        background-color: #e5ecf4;
+    }
+}
+
+
+.main__list {
+    @include flex-starter;
+    @include list-starter;
+    gap: 30px;
+}
+
+.main__item {
+    @include flex-starter;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 350px;
+}
+
+.main__item-img {
+    display: inline-block;
+    width: 48px;
+    height: 38px;
+    padding: 24px 29px;
+    background-color: #fcb72b;
+    border-radius: 50%;
+    margin-bottom: 40px;
+}
+
+.main__item-title {
+    color: #495567;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -1.071px;
+    margin-bottom: 27px;
+}
+
+.main__item-text {
+    color: #939caa;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    .main::before {
+        content: none;
+    }
+
+    .main__list {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .main__item {
+        max-width: 85%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .main__item-main {
+        max-width: 400px;
+    }
+
+    .main__item-img:nth-child(1) {
+        position: relative;
+        margin-right: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -200px;
+            left: 40px;
+            width: 15px;
+            height: 200px;
+            background-color: #e5ecf4;
+        }
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .main__item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .main__item-img {
+        padding: 14px 17px;
+
+        &>img {
+            width: 23px;
+            height: 28px;
+        }
+
+        &:nth-child(1)::before {
+            content: none;
+        }
+    }
+}
